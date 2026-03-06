@@ -331,6 +331,56 @@ tr:hover { background: rgba(0,0,0,0.015); }
 .trajectory-table td { text-align: center; font-size: 0.85rem; }
 .trajectory-table td:first-child { text-align: left; font-weight: 500; }
 
+/* Remediation Button */
+.remediation-btn {
+  display: inline-block;
+  padding: 0.75rem 1.5rem;
+  border-radius: 6px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: background 0.15s, box-shadow 0.15s;
+  cursor: pointer;
+  border: none;
+}
+.remediation-btn-primary {
+  background: #6f42c1;
+  color: white;
+}
+.remediation-btn-primary:hover {
+  background: #5a32a3;
+  box-shadow: 0 2px 8px rgba(111,66,193,0.3);
+}
+.remediation-btn-optional {
+  background: white;
+  color: #6f42c1;
+  border: 2px solid #6f42c1;
+}
+.remediation-btn-optional:hover {
+  background: #f3eefa;
+  box-shadow: 0 2px 8px rgba(111,66,193,0.15);
+}
+.remediation-btn-card {
+  background: var(--card-bg);
+  border: 2px dashed #6f42c1;
+  border-radius: 8px;
+  padding: 1.25rem 1.5rem;
+  margin-bottom: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+.remediation-btn-card p {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  margin: 0;
+}
+.remediation-btn-card strong {
+  color: #6f42c1;
+  font-size: 1rem;
+}
+
 /* Footer */
 .footer {
   margin-top: 3rem;
