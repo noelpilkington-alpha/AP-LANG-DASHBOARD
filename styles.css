@@ -1,0 +1,354 @@
+/* AP Lang Revision Dashboard — Shared Styles */
+
+:root {
+  --navy: #1b3a5c;
+  --navy-light: #2a5580;
+  --navy-dark: #0f2440;
+  --accent: #e8913a;
+  --accent-light: #f5c882;
+  --bg: #f4f6f9;
+  --card-bg: #ffffff;
+  --text: #1a1a2e;
+  --text-muted: #6b7280;
+  --border: #e2e6ec;
+  --emergency: #dc3545;
+  --emergency-bg: #fdf0f0;
+  --maintenance: #28a745;
+  --maintenance-bg: #f0fdf4;
+  --critical: #dc3545;
+  --weak: #e8913a;
+  --adequate: #ffc107;
+  --strong: #28a745;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.6;
+}
+
+/* Top Navigation */
+.topnav {
+  background: var(--navy);
+  color: white;
+  padding: 0;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+}
+.topnav-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  gap: 0;
+}
+.topnav-brand {
+  padding: 1rem 1.5rem;
+  font-weight: 700;
+  font-size: 1.1rem;
+  white-space: nowrap;
+  border-right: 1px solid rgba(255,255,255,0.15);
+}
+.topnav-brand small {
+  display: block;
+  font-weight: 400;
+  font-size: 0.75rem;
+  opacity: 0.7;
+}
+.topnav-links {
+  display: flex;
+  list-style: none;
+  gap: 0;
+  overflow-x: auto;
+}
+.topnav-links a {
+  color: rgba(255,255,255,0.8);
+  text-decoration: none;
+  padding: 1.15rem 1.25rem;
+  display: block;
+  font-size: 0.9rem;
+  white-space: nowrap;
+  transition: background 0.15s, color 0.15s;
+  border-bottom: 3px solid transparent;
+}
+.topnav-links a:hover {
+  background: rgba(255,255,255,0.08);
+  color: white;
+}
+.topnav-links a.active {
+  color: white;
+  border-bottom-color: var(--accent);
+  background: rgba(255,255,255,0.05);
+}
+.topnav-links .badge {
+  font-size: 0.65rem;
+  padding: 0.15em 0.5em;
+  border-radius: 3px;
+  margin-left: 0.4em;
+  vertical-align: middle;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+}
+.badge-emergency { background: var(--emergency); color: white; }
+.badge-remediation { background: #6f42c1; color: white; }
+.badge-maintenance { background: var(--maintenance); color: white; }
+
+/* Main Content */
+.main { max-width: 1200px; margin: 0 auto; padding: 2rem 1.5rem; }
+
+/* Page Header */
+.page-header {
+  margin-bottom: 2rem;
+}
+.page-header h1 {
+  font-size: 1.8rem;
+  color: var(--navy);
+  margin-bottom: 0.25rem;
+}
+.page-header .subtitle {
+  color: var(--text-muted);
+  font-size: 1rem;
+}
+
+/* Cards */
+.card {
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+}
+.card h2 {
+  font-size: 1.15rem;
+  color: var(--navy);
+  margin-bottom: 1rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid var(--border);
+}
+.card h3 {
+  font-size: 1rem;
+  color: var(--navy-light);
+  margin: 1.25rem 0 0.75rem;
+}
+
+/* Grid Layouts */
+.grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; }
+.grid-3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 1.5rem; }
+.grid-4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.5rem; }
+
+/* Student Overview Cards (index page) */
+.student-card {
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+  transition: box-shadow 0.15s;
+  text-decoration: none;
+  color: inherit;
+  display: block;
+}
+.student-card:hover {
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+.student-card-header {
+  background: var(--navy);
+  color: white;
+  padding: 1rem 1.25rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.student-card-header h3 {
+  color: white;
+  margin: 0;
+  font-size: 1.1rem;
+}
+.student-card-body {
+  padding: 1.25rem;
+}
+.student-card-body .stat-row {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.4rem 0;
+  border-bottom: 1px solid var(--border);
+  font-size: 0.9rem;
+}
+.student-card-body .stat-row:last-child { border-bottom: none; }
+.stat-label { color: var(--text-muted); }
+.stat-value { font-weight: 600; }
+
+/* Stat Boxes */
+.stat-box {
+  background: var(--bg);
+  border-radius: 6px;
+  padding: 1rem 1.25rem;
+  text-align: center;
+}
+.stat-box .stat-number {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--navy);
+  line-height: 1.2;
+}
+.stat-box .stat-desc {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  margin-top: 0.25rem;
+}
+
+/* Skill Bars */
+.skill-bar-group { margin-bottom: 0.75rem; }
+.skill-bar-label {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.85rem;
+  margin-bottom: 0.25rem;
+}
+.skill-bar-label .skill-name { font-weight: 500; }
+.skill-bar-label .skill-score { color: var(--text-muted); }
+.skill-bar-track {
+  height: 22px;
+  background: #e9ecef;
+  border-radius: 4px;
+  overflow: hidden;
+  position: relative;
+}
+.skill-bar-fill {
+  height: 100%;
+  border-radius: 4px;
+  transition: width 0.6s ease;
+  display: flex;
+  align-items: center;
+  padding-left: 6px;
+  font-size: 0.7rem;
+  font-weight: 600;
+  color: white;
+  min-width: 2px;
+}
+.bar-critical { background: var(--critical); }
+.bar-weak { background: var(--weak); }
+.bar-adequate { background: var(--adequate); color: var(--text); }
+.bar-strong { background: var(--strong); }
+
+/* Tables */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.9rem;
+}
+th, td {
+  padding: 0.6rem 0.75rem;
+  text-align: left;
+  border-bottom: 1px solid var(--border);
+}
+th {
+  background: var(--bg);
+  font-weight: 600;
+  color: var(--navy);
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+}
+tr:hover { background: rgba(0,0,0,0.015); }
+.table-sm th, .table-sm td { padding: 0.4rem 0.6rem; font-size: 0.85rem; }
+
+/* Status Tags */
+.tag {
+  display: inline-block;
+  padding: 0.2em 0.6em;
+  border-radius: 4px;
+  font-size: 0.78rem;
+  font-weight: 600;
+}
+.tag-critical { background: #fde8e8; color: var(--critical); }
+.tag-weak { background: #fef3e2; color: #b45309; }
+.tag-adequate { background: #fefce8; color: #92400e; }
+.tag-strong { background: #ecfdf5; color: #065f46; }
+
+/* Week Plan Sections */
+.week-section {
+  border-left: 4px solid var(--navy-light);
+  padding-left: 1.25rem;
+  margin-bottom: 1.5rem;
+}
+.week-section h3 {
+  color: var(--navy);
+  font-size: 1rem;
+  margin-bottom: 0.5rem;
+}
+.week-section h4 {
+  font-size: 0.9rem;
+  color: var(--navy-light);
+  margin: 0.75rem 0 0.35rem;
+}
+.week-section ul {
+  margin: 0.25rem 0 0.5rem 1.25rem;
+  font-size: 0.9rem;
+}
+.week-section li { margin-bottom: 0.3rem; }
+
+/* Comparison Table */
+.comparison-table th:first-child { width: 30%; }
+.comparison-table td { text-align: center; }
+.comparison-table th:first-child,
+.comparison-table td:first-child { text-align: left; }
+
+/* FRQ Table */
+.frq-table td:nth-child(2) { font-weight: 600; text-align: center; }
+
+/* Root Cause Block */
+.root-cause {
+  background: var(--emergency-bg);
+  border-left: 4px solid var(--emergency);
+  padding: 1rem 1.25rem;
+  border-radius: 0 6px 6px 0;
+  margin-bottom: 1rem;
+  font-size: 0.95rem;
+}
+.root-cause strong { color: var(--emergency); }
+
+/* Key Finding Block */
+.key-finding {
+  background: #eff6ff;
+  border-left: 4px solid #3b82f6;
+  padding: 1rem 1.25rem;
+  border-radius: 0 6px 6px 0;
+  margin-bottom: 1rem;
+  font-size: 0.95rem;
+}
+
+/* Trajectory Table */
+.trajectory-table th { text-align: center; }
+.trajectory-table th:first-child { text-align: left; }
+.trajectory-table td { text-align: center; font-size: 0.85rem; }
+.trajectory-table td:first-child { text-align: left; font-weight: 500; }
+
+/* Footer */
+.footer {
+  margin-top: 3rem;
+  padding: 1.5rem;
+  text-align: center;
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  border-top: 1px solid var(--border);
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .grid-2, .grid-3, .grid-4 { grid-template-columns: 1fr; }
+  .topnav-inner { flex-wrap: wrap; }
+  .topnav-brand { border-right: none; width: 100%; border-bottom: 1px solid rgba(255,255,255,0.1); }
+  .topnav-links { width: 100%; }
+}
+@media (max-width: 600px) {
+  .main { padding: 1rem; }
+  .card { padding: 1rem; }
+}
