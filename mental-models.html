@@ -1,0 +1,622 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mental Models Course - AP Lang</title>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    .module-card { border-left: 4px solid var(--navy-light); margin-bottom: 1.5rem; }
+    .module-card.model-1 { border-left-color: #6f42c1; }
+    .module-card.model-2 { border-left-color: var(--accent); }
+    .module-card.model-3 { border-left-color: #0d6efd; }
+    .module-card.model-4 { border-left-color: var(--strong); }
+    .module-card.model-5 { border-left-color: #dc3545; }
+    .module-card.model-6 { border-left-color: var(--navy); }
+    .model-header { padding: 1rem 1.5rem; border-radius: 8px; margin: 2rem 0 1rem; }
+    .model-header h2 { color: white; border: none; margin: 0; padding: 0; font-size: 1.2rem; }
+    .model-header p { color: rgba(255,255,255,0.8); margin: 0.25rem 0 0; font-size: 0.9rem; }
+    .model-header.mh-1 { background: #6f42c1; }
+    .model-header.mh-2 { background: var(--accent); }
+    .model-header.mh-3 { background: #0d6efd; }
+    .model-header.mh-4 { background: var(--strong); }
+    .model-header.mh-5 { background: #dc3545; }
+    .model-header.mh-6 { background: var(--navy); }
+    .step-block { background: var(--bg); border-radius: 6px; padding: 1rem 1.25rem; margin-bottom: 0.75rem; }
+    .step-block h4 { color: var(--navy); margin-bottom: 0.5rem; font-size: 0.9rem; }
+    .step-block p, .step-block ul { font-size: 0.88rem; }
+    .step-block ul { margin-left: 1.25rem; }
+    .step-block li { margin-bottom: 0.25rem; }
+    .checkpoint { background: #ecfdf5; border-left: 4px solid var(--strong); padding: 1rem 1.25rem; border-radius: 0 6px 6px 0; margin-top: 1rem; }
+    .checkpoint h4 { color: #065f46; margin-bottom: 0.5rem; font-size: 0.9rem; }
+    .checkpoint ul { margin-left: 1.25rem; font-size: 0.88rem; }
+    .checkpoint li { margin-bottom: 0.2rem; }
+    blockquote { border-left: 3px solid var(--border); padding: 0.5rem 1rem; margin: 0.5rem 0; font-style: italic; color: var(--text-muted); font-size: 0.88rem; }
+    .think-aloud { background: #fff7ed; border-left: 4px solid var(--accent); padding: 1rem 1.25rem; border-radius: 0 6px 6px 0; margin: 0.75rem 0; font-size: 0.88rem; }
+    .think-aloud strong { color: #92400e; }
+    .entry-point-table td:first-child { font-weight: 600; }
+    .sfe-chain { background: #f0f4ff; border-radius: 6px; padding: 0.75rem 1rem; margin: 0.5rem 0; font-size: 0.88rem; font-family: 'Segoe UI', system-ui, sans-serif; }
+    .sfe-chain .sfe-s { color: #6f42c1; font-weight: 600; }
+    .sfe-chain .sfe-f { color: #0d6efd; font-weight: 600; }
+    .sfe-chain .sfe-e { color: #dc3545; font-weight: 600; }
+    .model-number { display: inline-block; width: 28px; height: 28px; line-height: 28px; text-align: center; border-radius: 50%; color: white; font-weight: 700; font-size: 0.85rem; margin-right: 0.5rem; }
+    .mn-1 { background: #6f42c1; }
+    .mn-2 { background: var(--accent); }
+    .mn-3 { background: #0d6efd; }
+    .mn-4 { background: var(--strong); }
+    .mn-5 { background: #dc3545; }
+    .mn-6 { background: var(--navy); }
+    .glance-table td:first-child { white-space: nowrap; }
+  </style>
+</head>
+<body>
+
+<nav class="topnav">
+  <div class="topnav-inner">
+    <div class="topnav-brand">AP Lang Revision<small>Dashboard</small></div>
+    <ul class="topnav-links">
+      <li><a href="index.html">Overview</a></li>
+      <li><a href="sara-beth.html">Sara Beth Way</a></li>
+      <li><a href="ella.html">Ella Gremont</a></li>
+      <li><a href="geetesh.html">Geetesh Parelly</a></li>
+      <li><a href="jeremy.html">Jeremy Wang</a></li>
+      <li><a href="mental-models.html" class="active">Mental Models <span class="badge badge-remediation">Course</span></a></li>
+    </ul>
+  </div>
+</nav>
+
+<div class="main">
+
+  <a href="index.html" class="back-link" style="display:inline-block;margin-bottom:1rem;color:var(--navy-light);text-decoration:none;font-size:0.9rem;">&larr; Back to Overview</a>
+
+  <div class="page-header">
+    <h1>Thinking Like an AP Lang Student</h1>
+    <p class="subtitle">Asynchronous Mental Models Course | 6 Modules | Self-paced</p>
+  </div>
+
+  <!-- Philosophy -->
+  <div class="card">
+    <h2>Course Philosophy</h2>
+    <div class="root-cause">
+      Most students who struggle with AP Lang aren't missing knowledge &mdash; they're missing <strong>lenses</strong>. They read a passage and see words. A strong AP Lang student reads the same passage and sees a writer making moves for reasons. The difference isn't intelligence or preparation &mdash; it's that the strong student has internalized mental models that activate automatically when they encounter text.
+    </div>
+    <p style="font-size:0.9rem;margin-top:1rem;">This course teaches six mental models in sequence. Each one builds on the last. Together, they produce the analytical posture the AP Lang exam rewards.</p>
+  </div>
+
+  <!-- Async Design + Relationship to Materials -->
+  <div class="grid-2">
+    <div class="card">
+      <h2>Asynchronous Design</h2>
+      <table class="table-sm">
+        <tr><td><strong>Written think-alouds</strong></td><td>Replace live modeling &mdash; expert internal monologue made visible on the page</td></tr>
+        <tr><td><strong>Model answers</strong></td><td>Replace tutor feedback &mdash; compare your reasoning AFTER attempting independently</td></tr>
+        <tr><td><strong>Self-assessment rubrics</strong></td><td>Target reasoning quality, not just answer correctness</td></tr>
+        <tr><td><strong>Checkpoints gate progression</strong></td><td>Don't advance until you meet criteria &mdash; skipping ahead produces confusion</td></tr>
+        <tr><td><strong>Concreteness over abstraction</strong></td><td>Every concept introduced through a specific passage example</td></tr>
+      </table>
+    </div>
+    <div class="card">
+      <h2>How This Course Connects</h2>
+      <table class="table-sm">
+        <tr><td><strong>Review Packets</strong></td><td>Teach AP Lang content by skill area &mdash; this course teaches HOW TO THINK about that content</td></tr>
+        <tr><td><strong>Remediation Outlines</strong></td><td>Student-specific practice sequences &mdash; this course provides the TEACHING LAYER those outlines reference</td></tr>
+        <tr><td><strong>Emergency Plans</strong></td><td>Week-by-week schedules &mdash; this course is the foundation those plans assume</td></tr>
+      </table>
+      <p style="font-size:0.85rem;margin-top:0.75rem;color:var(--text-muted);">Work through this course FIRST or ALONGSIDE remediation materials &mdash; not after.</p>
+    </div>
+  </div>
+
+  <!-- Student Entry Points -->
+  <div class="card">
+    <h2>Student Entry Points</h2>
+    <p style="font-size:0.9rem;margin-bottom:1rem;">Not every student starts at Module 1. Use the diagnostic in Module 1 to confirm, but recommended entry points based on existing analysis:</p>
+    <table class="comparison-table entry-point-table">
+      <thead>
+        <tr><th>Student</th><th>Start At</th><th>Rationale</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Sara Beth Way</td><td><span class="model-number mn-1">1</span> Module 1</td><td>No analytical framework. Needs every model from scratch.</td></tr>
+        <tr><td>Ella Gremont</td><td><span class="model-number mn-2">2</span> Module 2</td><td>Already believes in authorial choice (6/6 Rhetorical Analysis FRQ) but can't operationalize it at speed.</td></tr>
+        <tr><td>Geetesh Parelly</td><td><span class="model-number mn-3">3</span> Module 3</td><td>Has fragments of analytical thinking but comprehension stalls before analysis begins. Needs the contextual model.</td></tr>
+        <tr><td>Jeremy Wang</td><td><span class="model-number mn-5">5</span> Module 5</td><td>Has most models from the writing side. Needs the one that bridges writing knowledge to reading.</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- ===================== MODULE 1 ===================== -->
+  <div class="model-header mh-1">
+    <h2><span class="model-number mn-1">1</span> Everything Is a Choice</h2>
+    <p>Core question: "Why did the author choose THIS?"</p>
+  </div>
+
+  <div class="card module-card model-1">
+    <h2>The Mental Model</h2>
+    <p style="font-size:0.9rem;"><strong>Nothing in a published text is accidental.</strong> Word choice, sentence length, paragraph breaks, what's included, what's omitted, the order of ideas, the tone of a single phrase &mdash; all deliberate. All strategic. All chosen.</p>
+    <p style="font-size:0.9rem;margin-top:0.75rem;">The shift from "the author talks about X" to "the author CHOSE to do X for a reason" is the single most important cognitive move in AP Lang. Every MCQ is, at its core, asking: <strong>Why did the writer make this choice?</strong></p>
+
+    <h3 style="margin-top:1.25rem;">The Choice Audit</h3>
+    <div class="think-aloud">
+      <strong>Expert Think-Aloud:</strong> "My grandmother kept a garden that no one else could see the point of. It was too far from the house to be convenient, too shaded to grow tomatoes reliably, and too small to feed anyone. She walked to it every morning anyway, her boots leaving the same ruts in the same mud, as if repetition were itself a form of argument."
+    </div>
+    <table class="table-sm" style="margin-top:0.75rem;">
+      <thead><tr><th>Element</th><th>What Was Chosen</th><th>Why This Choice?</th></tr></thead>
+      <tbody>
+        <tr><td>Subject</td><td>Grandmother's garden</td><td>Gardens = growth, patience, persistence. Sets up metaphor for the essay's argument.</td></tr>
+        <tr><td>"too far, too shaded, too small"</td><td>Triple parallel inadequacy</td><td>Rhythm of dismissal &mdash; makes the reversal ("She walked to it every morning anyway") land harder.</td></tr>
+        <tr><td>"as if repetition were itself a form of argument"</td><td>Explicit claim in description</td><td>Smuggles the thesis into imagery. Tips the author's hand: this essay argues persistence IS meaningful.</td></tr>
+        <tr><td>"ruts"</td><td>Chosen over "tracks" or "path"</td><td>Carries ambiguity &mdash; dedication AND stuckness. Author wants reader to hold both meanings.</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="card module-card model-1">
+    <h2>Practice Exercises</h2>
+
+    <div class="step-block">
+      <h4>Exercise 1.1: Choice Audit on a Full Passage</h4>
+      <p>Read a passage from your Review Packet or remediation materials. For each of these five elements, complete the Choice Audit:</p>
+      <ul>
+        <li>The opening sentence &mdash; What did the author begin with? Why this and not alternatives?</li>
+        <li>The placement of the thesis &mdash; Where does the claim appear? Why not earlier or later?</li>
+        <li>One specific word that could be replaced with a synonym &mdash; Why this word?</li>
+        <li>One piece of evidence &mdash; What type? Why this type for this audience?</li>
+        <li>The final sentence &mdash; How does it relate to the opening? Why end here?</li>
+      </ul>
+      <p>After completing, compare to the model response provided with the passage.</p>
+    </div>
+
+    <div class="step-block">
+      <h4>Exercise 1.2: The Accident Test</h4>
+      <p>Pick three elements from any passage. For each, try to argue it's accidental &mdash; that the author didn't think about it. You'll find you can't. Write a one-paragraph reflection: "Before this exercise, I would have described this passage as ___. Now I would describe it as ___."</p>
+    </div>
+
+    <div class="checkpoint">
+      <h4>Checkpoint: Ready for Module 2?</h4>
+      <ul>
+        <li>You can identify at least 5 deliberate choices in any paragraph of published prose</li>
+        <li>Your descriptions use "the author chose X in order to Y" rather than "the author talks about X"</li>
+        <li>You can explain WHY a choice is strategic, not just THAT it exists</li>
+        <li>The Choice Audit feels natural, not forced</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- ===================== MODULE 2 ===================== -->
+  <div class="model-header mh-2">
+    <h2><span class="model-number mn-2">2</span> STRUCTURE &rarr; FUNCTION &rarr; EFFECT</h2>
+    <p>Core question: "What is it, what does it do, why does it matter?"</p>
+  </div>
+
+  <div class="card module-card model-2">
+    <h2>The Mental Model</h2>
+    <p style="font-size:0.9rem;">Module 1 established that everything is a choice. Module 2 gives you a <strong>procedure</strong> for analyzing any choice:</p>
+    <table class="comparison-table" style="margin-top:0.75rem;">
+      <thead><tr><th>Level</th><th>Question</th><th>What Most Students Do</th><th>What AP Lang Rewards</th></tr></thead>
+      <tbody>
+        <tr><td style="color:#6f42c1;font-weight:600;">STRUCTURE</td><td>What is it?</td><td>"The author uses a metaphor" &larr; Stop here</td><td>Name the technique accurately</td></tr>
+        <tr><td style="color:#0d6efd;font-weight:600;">FUNCTION</td><td>What does it do?</td><td>"The metaphor compares X to Y" &larr; Stop here</td><td>Explain its role in the argument</td></tr>
+        <tr><td style="color:#dc3545;font-weight:600;">EFFECT</td><td>Why does it matter?</td><td>Rarely reached</td><td>Explain impact on audience/persuasion</td></tr>
+      </tbody>
+    </table>
+
+    <h3 style="margin-top:1.25rem;">The S-F-E Chain</h3>
+    <p style="font-size:0.9rem;">Every analytical observation should be expressible as a chain:</p>
+
+    <div class="sfe-chain">
+      <span class="sfe-s">The parallel structure in the opening three sentences</span> <strong>serves to</strong> <span class="sfe-f">establish a rhythm of accumulating evidence</span> <strong>which</strong> <span class="sfe-e">makes the audience feel the weight of the problem before the author proposes a solution.</span>
+    </div>
+    <div class="sfe-chain">
+      <span class="sfe-s">The shift from third person to second person in paragraph 5</span> <strong>serves to</strong> <span class="sfe-f">move from general observation to direct address</span> <strong>which</strong> <span class="sfe-e">implicates the reader personally, making it harder to remain a detached observer.</span>
+    </div>
+    <div class="sfe-chain">
+      <span class="sfe-s">The author's concession that "critics raise valid concerns"</span> <strong>serves to</strong> <span class="sfe-f">acknowledge opposing views before the rebuttal</span> <strong>which</strong> <span class="sfe-e">signals intellectual honesty and makes the subsequent dismissal more credible to a skeptical audience.</span>
+    </div>
+
+    <h3 style="margin-top:1.25rem;">S-F-E Across the Exam</h3>
+    <table class="table-sm">
+      <thead><tr><th>Skill Area</th><th>Structure Example</th><th>Function Example</th><th>Effect Example</th></tr></thead>
+      <tbody>
+        <tr><td>Reasoning (5/6)</td><td>Counterargument in P4</td><td>"Primarily serves to..."</td><td>"Strengthens position by..."</td></tr>
+        <tr><td>Claims (3/4)</td><td>Government study cited</td><td>"Functions as evidence for..."</td><td>"Institutional data persuades because..."</td></tr>
+        <tr><td>Style (7/8)</td><td>Short declarative sentences</td><td>"Creates urgency"</td><td>"Reinforces that delay is dangerous"</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="card module-card model-2">
+    <h2>Practice Exercises</h2>
+
+    <div class="step-block">
+      <h4>Exercise 2.1: Leveling Up</h4>
+      <p>Extend each statement to a full S-F-E chain:</p>
+      <ul>
+        <li>"The author uses statistics in paragraph 3." (Structure only) &mdash; Add Function + Effect</li>
+        <li>"The author shifts from formal to informal tone." (Structure only) &mdash; Add Function + Effect</li>
+        <li>"The anecdote illustrates the impact of poverty." (Structure + Function) &mdash; Add Effect</li>
+        <li>"Paragraph 6 presents a counterargument." (Structure only) &mdash; Add Function + Effect</li>
+        <li>"The rhetorical question engages the reader." (Structure + vague Effect) &mdash; Rewrite with all three</li>
+      </ul>
+    </div>
+
+    <div class="step-block">
+      <h4>Exercise 2.2: S-F-E Across Skill Areas</h4>
+      <p>Take a single passage. Produce three S-F-E chains from the SAME passage:</p>
+      <ul>
+        <li>One analyzing a <strong>Reasoning/Organization</strong> choice</li>
+        <li>One analyzing a <strong>Claims/Evidence</strong> choice</li>
+        <li>One analyzing a <strong>Style</strong> choice</li>
+      </ul>
+      <p>Same passage, three applications, same procedure. S-F-E is a universal lens.</p>
+    </div>
+
+    <div class="step-block">
+      <h4>Exercise 2.3: MCQ Translation</h4>
+      <p>For each MCQ stem, identify which S-F-E level the question primarily tests:</p>
+      <ul>
+        <li>"The author includes the quotation primarily to..." &mdash; <em>Structure / Function / Effect?</em></li>
+        <li>"The sentence structure in lines 14-16 can best be described as..." &mdash; <em>Structure / Function / Effect?</em></li>
+        <li>"The author's decision to address counterarguments before presenting her own evidence has the effect of..." &mdash; <em>Structure / Function / Effect?</em></li>
+      </ul>
+      <p style="color:var(--text-muted);font-size:0.85rem;">Answers: Function, Structure, Effect. Knowing which level tells you what depth your answer needs.</p>
+    </div>
+
+    <div class="checkpoint">
+      <h4>Checkpoint: Ready for Module 3?</h4>
+      <ul>
+        <li>You can produce a complete S-F-E chain for any passage element in under 60 seconds</li>
+        <li>Your statements consistently reach the Effect level, not just Structure</li>
+        <li>You can apply S-F-E to reasoning, evidence, AND style</li>
+        <li>When you read an MCQ stem, you can identify which S-F-E level it targets</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- ===================== MODULE 3 ===================== -->
+  <div class="model-header mh-3">
+    <h2><span class="model-number mn-3">3</span> The Rhetorical Situation as a Force Field</h2>
+    <p>Core question: "What forces explain this choice?"</p>
+  </div>
+
+  <div class="card module-card model-3">
+    <h2>The Mental Model</h2>
+    <p style="font-size:0.9rem;">Most students learn the rhetorical situation as a checklist: identify the speaker, occasion, audience, purpose, subject. That's nearly useless for the exam.</p>
+    <p style="font-size:0.9rem;margin-top:0.75rem;">The model that works: <strong>The rhetorical situation is a set of forces that constrain and enable the writer's choices.</strong> Every S-F-E chain (Module 2) exists WITHIN a force field of pressures that explain WHY the writer chose what they chose.</p>
+
+    <table class="comparison-table" style="margin-top:1rem;">
+      <thead><tr><th>Force</th><th>Checklist Thinking (Useless)</th><th>Force Field Thinking (Useful)</th></tr></thead>
+      <tbody>
+        <tr><td><strong>Audience</strong></td><td>"The audience is parents"</td><td>"Parents who believe education matters but doubt THIS reform &mdash; so the author skips 'education is important' and goes directly to addressing implementation skepticism"</td></tr>
+        <tr><td><strong>Purpose</strong></td><td>"The purpose is to persuade"</td><td>"Move an audience from passive agreement to active support &mdash; which is why the author ends with a specific call to action"</td></tr>
+        <tr><td><strong>Exigence</strong></td><td>"A new policy"</td><td>"A policy that passed over public objection &mdash; the author has LOST the fight, explaining the shift from 'stop the policy' to 'hold representatives accountable'"</td></tr>
+        <tr><td><strong>Writer</strong></td><td>"The speaker is a senator"</td><td>"A senator from the opposing party &mdash; cannot appeal to party loyalty, must use cross-partisan evidence and measured tone"</td></tr>
+      </tbody>
+    </table>
+
+    <h3 style="margin-top:1.25rem;">The Constraint Test</h3>
+    <p style="font-size:0.9rem;">For any passage, ask: <strong>What couldn't the author do?</strong></p>
+    <div class="think-aloud">
+      <strong>Expert Think-Aloud:</strong> "She couldn't use jargon &mdash; general audience. Couldn't ignore the counterargument &mdash; it was published in the same paper last week. Couldn't appeal to personal experience &mdash; writing as a policy analyst, not a patient. Couldn't wait to publish next month &mdash; the vote is Friday. Every constraint EXPLAINS a choice."
+    </div>
+  </div>
+
+  <div class="card module-card model-3">
+    <h2>Practice Exercises</h2>
+
+    <div class="step-block">
+      <h4>Exercise 3.1: Force Field Mapping</h4>
+      <p>Before analyzing specific elements, map the force field for a passage:</p>
+      <ul>
+        <li><strong>Audience:</strong> Who are they? What do they already believe? What constrains/enables?</li>
+        <li><strong>Exigence:</strong> What gap prompted this text? (Not the topic &mdash; the urgency.)</li>
+        <li><strong>Writer Position:</strong> What credentials/relationship? What moves are available?</li>
+        <li><strong>Context:</strong> Historical moment, publication venue, cultural assumptions?</li>
+      </ul>
+      <p>Then pick three choices and explain each AS A RESPONSE TO the force field.</p>
+    </div>
+
+    <div class="step-block">
+      <h4>Exercise 3.2: Same Topic, Different Forces</h4>
+      <p>Read two passages arguing the same position for different audiences (or contexts). Identify three choices that differ. For each, explain the difference as a response to the different rhetorical situations. Same argument, different forces, different choices.</p>
+    </div>
+
+    <div class="step-block">
+      <h4>Exercise 3.3: The Exigence Question</h4>
+      <p>For three passages, distinguish:</p>
+      <ul>
+        <li>The <strong>topic</strong> (what it's about &mdash; easy)</li>
+        <li>The <strong>exigence</strong> (the gap between what IS and what the writer believes SHOULD be &mdash; harder)</li>
+        <li>One choice that only makes sense in light of the exigence, not the topic</li>
+      </ul>
+    </div>
+
+    <div class="checkpoint">
+      <h4>Checkpoint: Ready for Module 4?</h4>
+      <ul>
+        <li>You map the rhetorical force field before analyzing individual elements</li>
+        <li>You explain choices as responses to situational forces, not just isolated techniques</li>
+        <li>You distinguish exigence from topic</li>
+        <li>You identify audience by values and beliefs, not demographics</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- ===================== MODULE 4 ===================== -->
+  <div class="model-header mh-4">
+    <h2><span class="model-number mn-4">4</span> The Claim Hierarchy</h2>
+    <p>Core question: "Where does this fit in the argument's architecture?"</p>
+  </div>
+
+  <div class="card module-card model-4">
+    <h2>The Mental Model</h2>
+    <p style="font-size:0.9rem;">Students see arguments as flat: "The author thinks X." Strong readers see arguments as <strong>nested structures</strong> with distinct levels:</p>
+
+    <div class="step-block" style="font-family: 'Courier New', monospace; font-size: 0.85rem; line-height: 1.8;">
+      THESIS (overarching position)<br>
+      &nbsp;&nbsp;+-- CLAIM 1 (a supporting assertion)<br>
+      &nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;+-- EVIDENCE (specific support)<br>
+      &nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;+-- COMMENTARY (writer's interpretation)<br>
+      &nbsp;&nbsp;+-- CLAIM 2<br>
+      &nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;+-- EVIDENCE<br>
+      &nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;+-- COMMENTARY<br>
+      &nbsp;&nbsp;+-- COUNTERCLAIM (opposing assertion)<br>
+      &nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;+-- CONCESSION (what the writer grants)<br>
+      &nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;+-- REBUTTAL (why thesis still holds)<br>
+      &nbsp;&nbsp;+-- CLAIM 3<br>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;+-- EVIDENCE<br>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;+-- COMMENTARY
+    </div>
+
+    <h3 style="margin-top:1rem;">The Most Common Confusion</h3>
+    <table class="table-sm">
+      <thead><tr><th>Level</th><th>What It Is</th><th>Test</th></tr></thead>
+      <tbody>
+        <tr><td><strong>Thesis</strong></td><td>The overarching position</td><td>It's what the whole text exists to prove</td></tr>
+        <tr><td><strong>Claim</strong></td><td>A reason the thesis is true</td><td>Supports the thesis but needs its own support</td></tr>
+        <tr><td><strong>Evidence</strong></td><td>A specific fact, example, or source</td><td>Supports a claim but doesn't argue by itself</td></tr>
+        <tr><td><strong>Commentary</strong></td><td>Why the evidence matters</td><td>Connective tissue &mdash; without it, evidence just sits there</td></tr>
+      </tbody>
+    </table>
+
+    <h3 style="margin-top:1rem;">Why It Matters for the Exam</h3>
+    <ul style="font-size:0.9rem;margin-left:1.25rem;">
+      <li><strong>MCQs:</strong> "The relationship between paragraphs 2 and 5" = asking you to see the hierarchy</li>
+      <li><strong>Synthesis Essay:</strong> Build your own hierarchy with evidence from sources + commentary</li>
+      <li><strong>Rhetorical Analysis:</strong> Identify the author's hierarchy AND build your own about how it works</li>
+      <li><strong>Argument Essay:</strong> Build a hierarchy from scratch using your own reasoning</li>
+    </ul>
+  </div>
+
+  <div class="card module-card model-4">
+    <h2>Practice Exercises</h2>
+
+    <div class="step-block">
+      <h4>Exercise 4.1: Hierarchy Mapping</h4>
+      <p>Read a passage. Build the full hierarchy: thesis, claims, evidence, commentary, counterclaim. Draw it as an indented outline. Then answer: Which claim has the STRONGEST evidence-commentary connection? Which has the WEAKEST?</p>
+    </div>
+
+    <div class="step-block">
+      <h4>Exercise 4.2: Claims vs. Evidence Sorting</h4>
+      <p>Given 8 statements from a passage, sort into: Thesis, Claim, Evidence, Commentary. This targets the most common MCQ error: selecting a claim-level answer when the question asks about evidence.</p>
+    </div>
+
+    <div class="step-block">
+      <h4>Exercise 4.3: Building Your Own Hierarchy</h4>
+      <p>Choose a topic. Build a hierarchy: 1 thesis, 3 claims, 1 evidence per claim, 1 commentary per evidence, 1 counterclaim with concession + rebuttal. Then find a published passage on the same topic and map ITS hierarchy. Compare structures.</p>
+    </div>
+
+    <div class="checkpoint">
+      <h4>Checkpoint: Ready for Module 5?</h4>
+      <ul>
+        <li>You can build a complete claim hierarchy for any passage in under 5 minutes</li>
+        <li>You consistently distinguish thesis from claims from evidence from commentary</li>
+        <li>You can identify where commentary is missing and where it's present</li>
+        <li>When an MCQ asks about "the relationship between paragraphs," you think in hierarchy terms</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- ===================== MODULE 5 ===================== -->
+  <div class="model-header mh-5">
+    <h2><span class="model-number mn-5">5</span> Reading as Reverse Engineering</h2>
+    <p>Core question: "What problem was the writer solving here?"</p>
+  </div>
+
+  <div class="card module-card model-5">
+    <h2>The Mental Model</h2>
+    <p style="font-size:0.9rem;"><strong>Reading AP Lang is writing in reverse.</strong> The writer started with a purpose, chose a structure, selected evidence, crafted style, and produced a text. Your job is to start with the finished text and recover the decisions that built it.</p>
+
+    <table class="comparison-table" style="margin-top:1rem;">
+      <thead><tr><th>Writer's Process (Forward)</th><th>Reader's Process (Reverse)</th></tr></thead>
+      <tbody>
+        <tr><td>Identified an exigence</td><td>"What gap or problem prompted this text?"</td></tr>
+        <tr><td>Analyzed the audience</td><td>"Who is this for, and what do they believe?"</td></tr>
+        <tr><td>Chose a thesis</td><td>"What is the overarching claim?"</td></tr>
+        <tr><td>Organized claims in sequence</td><td>"Why this order? What does each paragraph's position accomplish?"</td></tr>
+        <tr><td>Selected specific evidence</td><td>"Why THIS evidence? What alternatives existed?"</td></tr>
+        <tr><td>Made style choices</td><td>"Why this word, this tone? What would change if the author chose differently?"</td></tr>
+      </tbody>
+    </table>
+
+    <h3 style="margin-top:1.25rem;">The "If I Were Writing This" Technique</h3>
+    <div class="think-aloud">
+      <strong>When you're stuck on any MCQ, ask:</strong> "If I were writing this essay, why would I have made this move at this point?" This converts reading comprehension into writing empathy. You step into the author's decision-making process and use YOUR knowledge of how arguments work to explain THEIR choices.
+    </div>
+    <p style="font-size:0.9rem;margin-top:0.75rem;">This technique is especially powerful for organization questions ("Where would I put the counterargument?"), evidence questions ("What evidence would convince THIS audience?"), and style questions ("How would I create urgency here?").</p>
+  </div>
+
+  <div class="card module-card model-5">
+    <h2>Practice Exercises</h2>
+
+    <div class="step-block">
+      <h4>Exercise 5.1: Forward-Then-Reverse</h4>
+      <p><strong>Part A (Forward):</strong> Given a topic, audience, and purpose &mdash; outline an argument in 10 minutes. Thesis, paragraph functions, evidence types, concession placement, conclusion strategy.</p>
+      <p><strong>Part B (Reverse):</strong> Read a published passage on the SAME topic. Map its architecture using the same categories.</p>
+      <p><strong>Part C (Comparison):</strong> Where did you and the author make the same choices? Where different? For every difference, explain WHY &mdash; the answer usually involves Module 3 (different rhetorical situations).</p>
+    </div>
+
+    <div class="step-block">
+      <h4>Exercise 5.2: The Decision Reconstruction</h4>
+      <p>For each paragraph, write: "The writer's problem at this point was ___, and they solved it by ___."</p>
+      <div class="think-aloud">
+        <strong>Example:</strong> "P1: The writer's problem was that the audience doesn't know what's at stake. They solved it by opening with a vivid anecdote that makes the problem tangible before naming it abstractly."<br><br>
+        "P4: The writer's problem was that a strong counterargument exists and ignoring it would undermine credibility. They solved it by conceding partial validity before explaining why it doesn't defeat the thesis."
+      </div>
+    </div>
+
+    <div class="step-block">
+      <h4>Exercise 5.3: MCQ Reverse Engineering</h4>
+      <p>Take 5 MCQs you've gotten wrong previously. For each:</p>
+      <ul>
+        <li>Identify what S-F-E level the question targets</li>
+        <li>Ask: "If I were writing this passage, why would I have made this choice?"</li>
+        <li>Does the technique lead you to the correct answer?</li>
+      </ul>
+      <p>For most students, this corrects 60-70% of previously wrong answers.</p>
+    </div>
+
+    <div class="checkpoint">
+      <h4>Checkpoint: Ready for Module 6?</h4>
+      <ul>
+        <li>Your first instinct is to reconstruct decisions, not summarize content</li>
+        <li>You can use "If I Were Writing This" to answer MCQs you'd otherwise miss</li>
+        <li>You can map passage architecture in under 4 minutes using Decision Reconstruction</li>
+        <li>You see reading and writing as the same activity in opposite directions</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- ===================== MODULE 6 ===================== -->
+  <div class="model-header mh-6">
+    <h2><span class="model-number mn-6">6</span> Who Benefits?</h2>
+    <p>Core question: "Whose interests are served by this framing?"</p>
+  </div>
+
+  <div class="card module-card model-6">
+    <h2>The Mental Model</h2>
+    <p style="font-size:0.9rem;">For any argument or rhetorical move, ask: <strong>Who benefits from the audience accepting this claim? Whose interests are served by framing the issue this way? What is made visible &mdash; and what is obscured?</strong></p>
+    <p style="font-size:0.9rem;margin-top:0.75rem;">This isn't cynicism. Every writer has a perspective, and that perspective shapes which evidence gets included, which counterarguments get addressed, and which framings feel natural. Recognizing perspective is an analytical move, not an accusation.</p>
+
+    <h3 style="margin-top:1.25rem;">How "Who Benefits?" Sharpens Earlier Models</h3>
+    <table class="table-sm">
+      <thead><tr><th>Model</th><th>Without "Who Benefits?"</th><th>With "Who Benefits?"</th></tr></thead>
+      <tbody>
+        <tr><td>M1: Choice</td><td>"Author opens with a statistic"</td><td>"Opening with data rather than lived experience benefits an argument that wants to appear objective"</td></tr>
+        <tr><td>M2: S-F-E</td><td>"Formal tone creates authority"</td><td>"Formal tone creates authority but distances the author from the affected community &mdash; benefiting credibility at the cost of solidarity"</td></tr>
+        <tr><td>M3: Force Field</td><td>"Audience is policymakers"</td><td>"Human cost is translated into economic terms &mdash; the framing this audience responds to, though it reduces people to budget lines"</td></tr>
+        <tr><td>M4: Hierarchy</td><td>"Author concedes difficulty"</td><td>"Difficulty is framed as logistical rather than structural &mdash; making the obstacle seem solvable within existing systems"</td></tr>
+      </tbody>
+    </table>
+
+    <h3 style="margin-top:1.25rem;">Where This Appears on the Exam</h3>
+    <ul style="font-size:0.9rem;margin-left:1.25rem;">
+      <li><strong>Synthesis Essay:</strong> Evaluate sources by perspective and interest, not just agreement</li>
+      <li><strong>Rhetorical Analysis:</strong> Sophistication point &mdash; "The author's framing benefits X while obscuring Y"</li>
+      <li><strong>Argument Essay:</strong> Sophistication point &mdash; qualification and nuance over absolute claims</li>
+    </ul>
+  </div>
+
+  <div class="card module-card model-6">
+    <h2>Practice Exercises</h2>
+
+    <div class="step-block">
+      <h4>Exercise 6.1: The Framing Analysis</h4>
+      <p>Identify a passage's central framing, then answer:</p>
+      <ul>
+        <li>What does this framing make visible?</li>
+        <li>What does it obscure?</li>
+        <li>Who benefits if the audience accepts it?</li>
+        <li>What alternative framing could have been used?</li>
+      </ul>
+    </div>
+
+    <div class="step-block">
+      <h4>Exercise 6.2: Source Evaluation for Synthesis</h4>
+      <p>Given 6 sources on a single topic, for each identify: the source's perspective (whose viewpoint), who benefits, what it reveals that others don't, what it obscures. Then select 3 for a synthesis essay and explain WHY beyond "it supports my thesis."</p>
+    </div>
+
+    <div class="step-block">
+      <h4>Exercise 6.3: The Sophistication Move</h4>
+      <p>Take an essay you've written. Find one claim that could be deepened with "Who Benefits?" thinking. Rewrite:</p>
+      <div class="think-aloud">
+        <strong>Before:</strong> "Social media has transformed political engagement by giving citizens a direct platform."<br><br>
+        <strong>After:</strong> "Social media has transformed political engagement by giving citizens a direct platform &mdash; though 'citizens' here means those with digital access, literacy, and time, a demographic that skews toward the already-engaged. The transformation is real, but its beneficiaries are not evenly distributed, which complicates any straightforward narrative of democratization."
+      </div>
+    </div>
+
+    <div class="checkpoint">
+      <h4>Checkpoint: Course Complete</h4>
+      <ul>
+        <li>You automatically ask "Who benefits?" when reading argumentative text</li>
+        <li>You identify what a framing makes visible AND what it obscures</li>
+        <li>You evaluate sources by perspective and interest</li>
+        <li>Your essays include qualified claims &mdash; the sophistication move</li>
+        <li>You integrate all six models fluidly: choices (M1), S-F-E (M2), force field (M3), hierarchy (M4), reverse engineering (M5), and critical evaluation (M6)</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- ===================== APPENDICES ===================== -->
+  <div class="model-header" style="background:var(--navy-dark);">
+    <h2>Appendices</h2>
+    <p>Quick reference, integration examples, and material connections</p>
+  </div>
+
+  <div class="card">
+    <h2>The Six Models at a Glance</h2>
+    <table class="comparison-table glance-table">
+      <thead><tr><th>#</th><th>Mental Model</th><th>Core Question</th><th>Replaces</th></tr></thead>
+      <tbody>
+        <tr><td><span class="model-number mn-1">1</span></td><td>Everything Is a Choice</td><td>"Why did the author choose THIS?"</td><td>"The author talks about..."</td></tr>
+        <tr><td><span class="model-number mn-2">2</span></td><td>STRUCTURE &rarr; FUNCTION &rarr; EFFECT</td><td>"What is it, what does it do, why?"</td><td>"The author uses [device]."</td></tr>
+        <tr><td><span class="model-number mn-3">3</span></td><td>Rhetorical Situation as Force Field</td><td>"What forces explain this choice?"</td><td>"The speaker is..., the audience is..."</td></tr>
+        <tr><td><span class="model-number mn-4">4</span></td><td>The Claim Hierarchy</td><td>"Where does this fit in the architecture?"</td><td>"The author thinks X."</td></tr>
+        <tr><td><span class="model-number mn-5">5</span></td><td>Reading as Reverse Engineering</td><td>"What problem was the writer solving?"</td><td>Reading for content/summary</td></tr>
+        <tr><td><span class="model-number mn-6">6</span></td><td>Who Benefits?</td><td>"Whose interests are served?"</td><td>Taking texts at face value</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="card">
+    <h2>Model Integration Example</h2>
+    <p style="font-size:0.9rem;margin-bottom:1rem;"><strong>MCQ:</strong> "The author's inclusion of the extended example in paragraph 4 primarily serves to..."</p>
+    <table class="table-sm">
+      <thead><tr><th>Model</th><th>What It Contributes</th></tr></thead>
+      <tbody>
+        <tr><td><span class="model-number mn-1">1</span></td><td>The example is deliberate. The author chose THIS example over others.</td></tr>
+        <tr><td><span class="model-number mn-2">2</span></td><td>S = extended example; the question asks for F (Function).</td></tr>
+        <tr><td><span class="model-number mn-3">3</span></td><td>This audience responds to narrative over statistics &mdash; explains the choice.</td></tr>
+        <tr><td><span class="model-number mn-4">4</span></td><td>P4 supports Claim 2. The example is Evidence for that claim.</td></tr>
+        <tr><td><span class="model-number mn-5">5</span></td><td>"If I were writing this, I'd use an extended example here because the previous paragraph gave data &mdash; this one makes it human."</td></tr>
+        <tr><td><span class="model-number mn-6">6</span></td><td>Centering one person's experience benefits the argument by making the abstract concrete, but risks being dismissed as anecdotal.</td></tr>
+      </tbody>
+    </table>
+    <div class="sfe-chain" style="margin-top:1rem;">
+      <strong>Integrated answer:</strong> The extended example serves to provide a concrete, humanizing illustration of the data in paragraph 3, making the argument's stakes tangible for an audience that might otherwise remain detached from statistical evidence.
+    </div>
+  </div>
+
+  <div class="card">
+    <h2>Connecting to Your Materials</h2>
+    <table class="comparison-table">
+      <thead><tr><th>When Working On...</th><th>Use These Models</th></tr></thead>
+      <tbody>
+        <tr><td>Review Packet: Rhetorical Situation (Skills 1/2)</td><td><span class="model-number mn-3">3</span> Force Field + <span class="model-number mn-1">1</span> Everything Is a Choice</td></tr>
+        <tr><td>Review Packet: Claims &amp; Evidence (Skills 3/4)</td><td><span class="model-number mn-4">4</span> Claim Hierarchy + <span class="model-number mn-2">2</span> S-F-E</td></tr>
+        <tr><td>Review Packet: Reasoning &amp; Organization (Skills 5/6)</td><td><span class="model-number mn-4">4</span> Claim Hierarchy + <span class="model-number mn-5">5</span> Reverse Engineering</td></tr>
+        <tr><td>Review Packet: Style (Skills 7/8)</td><td><span class="model-number mn-2">2</span> S-F-E + <span class="model-number mn-3">3</span> Force Field</td></tr>
+        <tr><td>Synthesis Essay</td><td><span class="model-number mn-4">4</span> Hierarchy + <span class="model-number mn-6">6</span> Who Benefits?</td></tr>
+        <tr><td>Rhetorical Analysis Essay</td><td><span class="model-number mn-2">2</span> S-F-E + <span class="model-number mn-3">3</span> Force Field + <span class="model-number mn-5">5</span> Reverse Engineering</td></tr>
+        <tr><td>Argument Essay</td><td><span class="model-number mn-4">4</span> Hierarchy + <span class="model-number mn-6">6</span> Who Benefits?</td></tr>
+        <tr><td>Full Exam Simulation</td><td>All six &mdash; practice integrating under timed conditions</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="footer">
+    Mental Models Course | AP Language and Composition | Framework aligned to CED (Effective Fall 2024)
+  </div>
+
+</div>
+
+</body>
+</html>
